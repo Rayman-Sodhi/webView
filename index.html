@@ -9,8 +9,8 @@
     <style>
         body,
         html {
-            width: 100%;
-            margin: 0;
+           
+            margin-top: 10;
            
             font-weight: 200;
         }
@@ -35,80 +35,132 @@
         input[type=number] {
             -moz-appearance: textfield;
         }
-        .card {
+        .card { 
+            padding:12px 0px 12px 18px;
+      
             display: flex;
-            width: 297px;
-            height: 67px;
-            padding: 12px;
-            border-radius: 0 8px 8px 0;
-            margin: 0px;
+            width: 275px;
+            height: 50px;
+         
+            border-radius: 0 8px 8px 0; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             flex-direction: column;
-            gap: 8px;
-               margin: 0; 
+            gap: 10px; 
         }
 
         .title-container {
             display: flex;
-            width: 132px;
-            height: 11px;
-            gap: 2px;
+            width: 132px; 
+            height: 11px; 
+            gap: 2px; 
         }
 
         .title {
+     
             width: 132px;
             height: 13px;
+            padding-top:5px;
             font-family: "Rubik", sans-serif;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             line-height: 13px;
             letter-spacing: 0;
             text-align: left;
-            color: #002953;
+            color:#002953;
+
+           
         }
 
         .content-container {
             display: flex;
             width: 273px;
             height: 26px;
-            gap: 8px;
+            gap: 8px; 
         }
 
         .sub-container {
             display: flex;
             flex-direction: column;
-            width: 91px;
-            height: 26px;
-            gap: 2px;
+            width: 90px; 
+            height: 26
+            gap: 2px; 
         }
-
-        .label {
-            width: 150px;
+        .label1 {
+            width: 370px;
             height: 12px;
             font-family: "Rubik", sans-serif;
-            font-size: 10px;
-            font-weight: 500;
+            font-size: 9px;
+            font-weight: 500px;
             line-height: 14px;
             letter-spacing: 0.16px;
             text-align: left;
-            color: #666666;
-        }
+            color:#666666;
 
-        .value {
-            width: 76px;
-            height: 14px;
+        }
+      .value1 {
+            width: 370px;
+            height: 12px;
             font-family: "Rubik", sans-serif;
-            font-size: 12px;
+            font-size: 10px;
             font-weight: 700;
             line-height: 14px;
             letter-spacing: 0.16px;
             text-align: left;
             color: #002953;
         }
+        .label2 {
+            width: 55px;
+            height: 12px;
+            font-family: "Rubik", sans-serif;
+            font-size: 9px;
+            font-weight: 500px;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+      color:#666666;
+
+        }
+      .value2 {
+            width: 55px;
+            height: 12px;
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+      color: #002953;
+
+        }
+        .label3 {
+            width: 73px;
+            height: 12px;
+            font-family: "Rubik", sans-serif;
+            font-size: 9px;
+            font-weight: 500px;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+      color:#666666;
+
+        }
+        .value3 {
+            width: 40px;
+            height: 12px;
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+      color: #002953;
+
+        }
 
         .border {
             position: absolute;
+           
             top: 0;
             left: 0;
             width: 8px;
@@ -126,16 +178,16 @@
         </div>
         <div class="content-container">
             <div class="sub-container">
-                <div class="label" id="label1"></div>
-                <div class="value" id="value1"></div>
+                <div class="label1" id="label1"></div>
+                <div class="value1" id="value1"></div>
             </div>
             <div class="sub-container">
-                <div class="label" id="label2"></div>
-                <div class="value" id="value2"></div>
+                <div class="label2" id="label2"></div>
+                <div class="value2" id="value2"></div>
             </div>
             <div class="sub-container">
-                <div class="label" id="label3"></div>
-                <div class="value" id="value3"></div>
+                <div class="label3" id="label3"></div>
+                <div class="value3" id="value3"></div>
             </div>
         </div>
         <div class="border"></div>
