@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Display</title>
+    <style>
+        .card {
+            display: flex;
+            width: 297px;
+            height: 67px;
+            padding: 12px;
+            border-radius: 0 8px 8px 0; 
+          
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            flex-direction: column;
+            gap: 8px; 
+        }
+
+        .title-container {
+            display: flex;
+            width: 132px; 
+            height: 11px; 
+            gap: 2px; 
+        }
+
+        .title {
+     
+            width: 132px;
+            height: 13px;
+            font-family: "Rubik", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 13px;
+            letter-spacing: 0;
+            text-align: left;
+            color:#002953;
+
+           
+        }
+
+        .content-container {
+            display: flex;
+            width: 273px;
+            height: 26px;
+            gap: 8px; 
+        }
+
+        .sub-container {
+            display: flex;
+            flex-direction: column;
+            width: 91px; 
+            height: 26
+            gap: 2px; 
+        }
+
+        .label {
+            width: 62x;
+            height: 12x;
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 500px;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+      color:#666666;
+
+        }
+
+        .value {
+            width: 76px;
+            height: 14px;
+            font-family: "Rubik", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+      color: #002953;
+
+        }
+
+        .border {
+            position: absolute;
+          
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            border-radius: 4px 0 0 4px;
+            background-color: #00B094;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="title-container">
+            <div class="title">Fixed Deposit</div>
+        </div>
+        <div class="content-container">
+            <div class="sub-container">
+                <div class="label">Loan Account</div>
+                <div class="value">1234 </div>
+            </div>
+            <div class="sub-container">
+                <div class="label">Loan Amount</div>
+              <div class="value"> ₹7,00,000</div>
+            </div>
+            <div class="sub-container">
+                <div class="label">Next EMI Amount</div>
+              <div class="value"> ₹14,466</div>
+            </div>
+        </div>
+        <div class="border"></div>
+    </div>
+</body>
+
+</html>
