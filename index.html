@@ -12,24 +12,22 @@
             width: 297px;
             height: 67px;
             padding: 12px;
-            border-radius: 0 8px 8px 0; 
-          
-            margin: 10px;
+            border-radius: 0 8px 8px 0;
+            margin: 0px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             flex-direction: column;
-            gap: 8px; 
+            gap: 8px;
         }
 
         .title-container {
             display: flex;
-            width: 132px; 
-            height: 11px; 
-            gap: 2px; 
+            width: 132px;
+            height: 11px;
+            gap: 2px;
         }
 
         .title {
-     
             width: 132px;
             height: 13px;
             font-family: "Rubik", sans-serif;
@@ -38,37 +36,34 @@
             line-height: 13px;
             letter-spacing: 0;
             text-align: left;
-            color:#002953;
-
-           
+            color: #002953;
         }
 
         .content-container {
             display: flex;
             width: 273px;
             height: 26px;
-            gap: 8px; 
+            gap: 8px;
         }
 
         .sub-container {
             display: flex;
             flex-direction: column;
-            width: 91px; 
-            height: 26
-            gap: 2px; 
+            width: 91px;
+            height: 26px;
+            gap: 2px;
         }
 
         .label {
-            width: 62x;
-            height: 12x;
+            width: 150px;
+            height: 12px;
             font-family: "Rubik", sans-serif;
             font-size: 10px;
-            font-weight: 500px;
+            font-weight: 500;
             line-height: 14px;
             letter-spacing: 0.16px;
             text-align: left;
-      color:#666666;
-
+            color: #666666;
         }
 
         .value {
@@ -80,13 +75,11 @@
             line-height: 14px;
             letter-spacing: 0.16px;
             text-align: left;
-      color: #002953;
-
+            color: #002953;
         }
 
         .border {
             position: absolute;
-          
             top: 0;
             left: 0;
             width: 8px;
@@ -98,26 +91,58 @@
 </head>
 
 <body>
-    <div class="card">
+    <div class="card" id="dynamicCard">
         <div class="title-container">
-            <div class="title">Fixed Deposit</div>
+            <div class="title" id="cardTitle"></div>
         </div>
         <div class="content-container">
             <div class="sub-container">
-                <div class="label">Loan Account</div>
-                <div class="value">1234 </div>
+                <div class="label" id="label1"></div>
+                <div class="value" id="value1"></div>
             </div>
             <div class="sub-container">
-                <div class="label">Loan Amount</div>
-              <div class="value"> ₹7,00,000</div>
+                <div class="label" id="label2"></div>
+                <div class="value" id="value2"></div>
             </div>
             <div class="sub-container">
-                <div class="label">Next EMI Amount</div>
-              <div class="value"> ₹14,466</div>
+                <div class="label" id="label3"></div>
+                <div class="value" id="value3"></div>
             </div>
         </div>
         <div class="border"></div>
     </div>
+
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function updateCardContent() {
+            var title = getParameterByName('title') || '';
+            var label1 = getParameterByName('label1') || '';
+            var value1 = getParameterByName('value1') || '';
+            var label2 = getParameterByName('label2') || '';
+            var value2 = getParameterByName('value2') || '';
+            var label3 = getParameterByName('label3') || '';
+            var value3 = getParameterByName('value3') || '';
+
+            document.getElementById('cardTitle').innerHTML = title;
+            document.getElementById('label1').innerHTML = label1;
+            document.getElementById('value1').innerHTML = value1;
+            document.getElementById('label2').innerHTML = label2;
+            document.getElementById('value2').innerHTML = value2;
+            document.getElementById('label3').innerHTML = label3;
+            document.getElementById('value3').innerHTML = value3;
+        }
+
+        window.addEventListener("load", updateCardContent);
+    </script>
 </body>
 
 </html>
