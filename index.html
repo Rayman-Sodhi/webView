@@ -7,120 +7,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Display</title>
     <style>
-         body,
-      html {
-        margin: 0;
-      }
+        body,
+        html {
+            margin: 0;
+        }
 
-     
+        .card {
+            padding: 12px 0px 12px 18px;
+            display: flex;
+            width: 290px;
+            background-color: white;
+            position: relative;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-      .card {
-        padding: 12px 0px 12px 18px;
-        display: flex;
-        width: 270px;
-         background-color: white;
-        position: relative;
-        flex-direction: column;
-        gap: 10px;
-      }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            border-radius: 4px 0 0 4px;
+            background-color: #00b094;
+        }
 
-      .card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 100%;
-        border-radius: 4px 0 0 4px;
-        background-color: #00b094;
-      }
+        .title {
+            width: 132px;
+            height: 13px;
+            padding-top: 5px;
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 13px;
+            letter-spacing: 0;
+            text-align: left;
+            color: #002953;
+        }
 
-      .title {
-        width: 132px;
-        height: 13px;
-        padding-top: 5px;
-        font-family: "Rubik", sans-serif;
-        font-size: 10px;
-        font-weight: 700;
-        line-height: 13px;
-        letter-spacing: 0;
-        text-align: left;
-        color: #002953;
-      }
+        .content-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 8px;
+            justify-content: flex-start;
+            justify-content: flex-start;
+        }
 
-      .content-container {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr;
-        gap: 8px;
-        justify-content: flex-start;
-        justify-content: flex-start;
-      }
+        .sub-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-      .sub-container {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
+        .label1 {
+            font-family: "Rubik", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+            color: #666666;
+        }
 
-      .label1 {
-        font-family: "Rubik", sans-serif;
-        font-size: 9px;
-        font-weight: 500;
-        line-height: 14px;
-        letter-spacing: 0.16px;
-        text-align: left;
-        color: #666666;
-      }
+        .value1 {
+            font-family: "Rubik", sans-serif;
+            font-size: 9.5px;
+            font-weight: 800;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+            color: #002953;
+        }
 
-      .value1 {
-        font-family: "Rubik", sans-serif;
-        font-size: 10px;
-        font-weight: 700;
-        line-height: 14px;
-        letter-spacing: 0.16px;
-        text-align: left;
-        color: #002953;
-      }
+        .label2 {
+            font-family: "Rubik", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+            color: #666666;
+        }
 
-      .label2 {
-        font-family: "Rubik", sans-serif;
-        font-size: 9px;
-        font-weight: 500;
-        line-height: 14px;
-        letter-spacing: 0.16px;
-        text-align: left;
-        color: #666666;
-      }
+        .value2 {
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+            color: #002953;
+        }
 
-      .value2 {
-        font-family: "Rubik", sans-serif;
-        font-size: 10px;
-        font-weight: 700;
-        line-height: 14px;
-        letter-spacing: 0.16px;
-        text-align: left;
-        color: #002953;
-      }
+        .label3 {
+            font-family: "Rubik", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+            color: #666666;
+        }
 
-      .label3 {
-        font-family: "Rubik", sans-serif;
-        font-size: 9px;
-        font-weight: 500;
-        line-height: 14px;
-        letter-spacing: 0.16px;
-        text-align: left;
-        color: #666666;
-      }
-
-      .value3 {
-        font-family: "Rubik", sans-serif;
-        font-size: 10px;
-        font-weight: 700;
-        line-height: 14px;
-        letter-spacing: 0.16px;
-        text-align: left;
-        color: #002953;
-      }
+        .value3 {
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 14px;
+            letter-spacing: 0.16px;
+            text-align: left;
+            color: #002953;
+        }
     </style>
 </head>
 
@@ -147,6 +145,8 @@
     </div>
 
     <script>
+        var myVariable; // Assuming you have a variable in your setup
+
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -173,6 +173,27 @@
             document.getElementById('value2').innerHTML = value2;
             document.getElementById('label3').innerHTML = label3;
             document.getElementById('value3').innerHTML = value3;
+
+            // Delay sending the "done" value after 10 seconds
+            setTimeout(function () {
+                sendDoneValue();
+            }, 10000);
+        }
+
+        function sendDoneValue() {
+            // Assuming you have a variable named myVariable
+            myVariable = "done";
+            console.log("Value sent back:", myVariable);
+
+            // You can perform additional actions here based on your requirements
+
+            // Example: triggering another function after setting the value
+            handleDoneValue();
+        }
+
+        function handleDoneValue() {
+            // Example: displaying the stored value
+            console.log("Stored value:", myVariable);
         }
 
         window.addEventListener("load", updateCardContent);
